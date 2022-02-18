@@ -29,10 +29,20 @@ namespace Terminator.Logic
 
                     if (!terms.ContainsKey(e))
                     {
+                        Term newTerm = new()
+                        {
+                            term = e,
+                            occurences = 0,
+                            charLenth = e.Length
+                        };
+
                         Debug.Log($"New term found in file {s}");
                         Debug.Log($"Add term {e} to Dictionary");
                         terms.Add(e, 0);
                     }
+
+                    //For an existing term update the number of occurences in its json data
+
 
                     Debug.Log($"Encountered term match: {e}");
                     //Get key value from the Dict
